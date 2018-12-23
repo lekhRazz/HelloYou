@@ -9,8 +9,13 @@
   "author": "Lekh Raj Rokaya",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "joi": "^14.3.0",
+    "jsonwebtoken": "^8.4.0",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.4.0",
     "socket.io": "^2.2.0",
     "socket.io-client": "^2.2.0"
   }

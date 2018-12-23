@@ -1,9 +1,10 @@
-const express=require('express');
-const router=express.Router();
+const express = require('express');
+const router = express.Router();
+const UserController=require('../controllers/user.controller');
 
 
-router.get('/',async(req,res)=>{
-    res.render('home');
-});
+router.get('/', UserController.getSignupForm);
 
-module.exports=router;
+router.post('/', UserController.createUser );
+
+module.exports = router; 

@@ -3,8 +3,9 @@ const app=express();
 const socket=require('socket.io');
 
 app.use(express.static('./public'));
-require('./startup/routes')(app);
 
+require('./startup/routes')(app);
+require('./startup/db')();
 
 const port=3000;
 const server=app.listen(port,()=>{

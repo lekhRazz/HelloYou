@@ -14,6 +14,7 @@ function sendMessage() {
         message: message.value,
         handle: handle.value
     });
+   
 }
 // btn.addEventListener('click', function () {
 //     socket.emit('chat', {
@@ -42,6 +43,7 @@ message.addEventListener("keyup", function(event) {
 //Listen for events
 socket.on('chat', function (data) {
     feedback.innerHTML = '  ';
+    message.innerHTML='  ';
     output.innerHTML += '<p><strong>' + data.handle + '</strong>:' + data.message + '</p>';
 });
 
