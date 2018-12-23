@@ -1,11 +1,11 @@
 const express=require('express');
 const router=express.Router();
 const AuthController=require('../controllers/auth.controller');
-const {User,validate}=require('../models/users');
+const sessionChecker=require('../middleware/sessionChecker');
 
 
-router.get('/signin' ,AuthController.getLoginPage);
+router.get('/signin' ,sessionChecker,AuthController.getLoginPage);
 
-router.post('/',AuthController.checkSignIn);
+router.post('/checksignin',AuthController.checkSignIn);
 
 module.exports=router;

@@ -1,12 +1,9 @@
 const express=require('express');
 const router=express.Router();
 const ChatController=require('../controllers/chat.controller');
-const {User,validate}=require('../models/users');
+const sessionChecker=require('../middleware/sessionChecker');
 
-router.get('/' ,async(req,res)=>{
-    res.render('home');
-});
-
+router.get('/' ,ChatController.getChatRoom);
 
 router.post('/',async(req,res)=>{
     
