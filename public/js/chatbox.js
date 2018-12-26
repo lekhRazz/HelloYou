@@ -1,13 +1,13 @@
 
 
-var socket = io.connect('http://192.168.10.36:3000');
+var socket = io.connect('http://localhost:3000');
 
 //Query DOM
 var message = document.getElementById('message');
 var handle = document.getElementById('handle');
 var output = document.getElementById('output');
 var feedback = document.getElementById('feedback');
-
+var cancelbtn=document.getElementById('click_cross');
 $(".messages").animate({ scrollTop: $(document).height() }, "fast");
 
     $("#profile-img").click(function () {
@@ -90,4 +90,37 @@ socket.on('chat', function (data) {
 //Listen typing event
 socket.on('typing', function (data) {
   document.getElementById('feedback').innerHTML='<p>typing message...........</p>';
+});
+
+
+$("#searchField").click(function(){
+  console.log("action listening");
+  var MessageList=document.getElementById("contacts");
+  var ContactList=document.getElementById("hidden_contacts");
+  MessageList.style.display="none";
+  ContactList.style.display="block";
+});
+
+$("#searchField").on('keyup',function(){
+  console.log("action listening");
+  cancelbtn.style.display="block";
+  searchtxt = $("#searchField").val();
+      if ($.trim(searchtxt) == '') {
+        cancelbtn.style.display="none";
+      }else{
+        cancelbtn.style.display="block";
+
+      }
+  
+});
+
+$("#click_cross").click(function(){
+  console.log("you clicked cross icon");
+  var MessageList=document.getElementById("contacts");
+  var ContactList=document.getElementById("hidden_contacts");
+  $("#searchField").val(null);
+  MessageList.style.display="block";
+  ContactList.style.display="none";
+  cancelbtn.style.display="none";
+
 });

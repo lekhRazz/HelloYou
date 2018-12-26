@@ -297,6 +297,29 @@ body {
     position: absolute;
     margin: 10px 0 0 20px;
   }
+  #frame #sidepanel #search button {
+    position: absolute;
+    margin: 0 0 0 -33px;
+    background: #435f7a;
+    border-radius:0px;
+    opacity: 0.1;
+    padding:10px;
+  }
+  #frame #sidepanel #search #click_cross {
+    position: absolute;
+    margin:-52px 0 0 253px;
+    padding:10px;
+    display:none;
+  }
+  #click_cross:hover{
+    cursor: hand;
+  }
+
+  .fa-times-circle{
+    color:white;
+    font-size: 24px;
+  }
+
   #frame #sidepanel #search input {
     font-family: "proxima-nova",  "Source Sans Pro", sans-serif;
     padding: 10px 0 10px 46px;
@@ -321,13 +344,23 @@ body {
   #frame #sidepanel #search input:-moz-placeholder {
     color: #f5f5f5;
   }
+
+
   #frame #sidepanel #contacts {
-    height: calc(100% - 177px);
+    height: calc(50% - 177px);
     overflow-y: scroll;
     overflow-x: hidden;
   }
+  #frame #sidepanel #hidden_contacts {
+    display: none;
+    height: calc(50% - 177px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+
   @media screen and (max-width: 735px) {
-    #frame #sidepanel #contacts {
+    #frame #sidepanel #contacts{
       height: calc(100% - 149px);
       overflow-y: scroll;
       overflow-x: hidden;
@@ -335,28 +368,72 @@ body {
     #frame #sidepanel #contacts::-webkit-scrollbar {
       display: none;
     }
+    #frame #sidepanel #contacts #hidden_contacts{
+      height: calc(100% - 149px);
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+    #frame #sidepanel #hidden_contacts::-webkit-scrollbar {
+      display: none;
+    }
   }
+
+
+
   #frame #sidepanel #contacts.expanded {
     height: calc(100% - 334px);
   }
+  #frame #sidepanel #hidden_contacts.expanded {
+    height: calc(100% - 334px);
+  }
+
+
+
   #frame #sidepanel #contacts::-webkit-scrollbar {
     width: 8px;
     background: #2c3e50;
   }
+  #frame #sidepanel #hidden_contacts::-webkit-scrollbar {
+    width: 8px;
+    background: #2c3e50;
+  }
+
+
+
   #frame #sidepanel #contacts::-webkit-scrollbar-thumb {
     background-color: #243140;
   }
+  #frame #sidepanel #hidden_contacts::-webkit-scrollbar-thumb {
+    background-color: #243140;
+  }
+
+
   #frame #sidepanel #contacts ul li.contact {
     position: relative;
     padding: 10px 0 15px 0;
     font-size: 0.9em;
     cursor: pointer;
   }
+  #frame #sidepanel  #hidden_contacts ul li.contact {
+    position: relative;
+    padding: 10px 0 15px 0;
+    font-size: 0.9em;
+    cursor: pointer;
+  }
+
+
+
   @media screen and (max-width: 735px) {
     #frame #sidepanel #contacts ul li.contact {
       padding: 6px 0 46px 8px;
     }
+    #frame #sidepanel #hidden_contacts ul li.contact {
+      padding: 6px 0 46px 8px;
+    }
+
   }
+
+
   #frame #sidepanel #contacts ul li.contact:hover {
     background: #32465a;
   }
@@ -367,16 +444,31 @@ body {
   #frame #sidepanel #contacts ul li.contact.active span.contact-status {
     border: 2px solid #32465a !important;
   }
+
+
   #frame #sidepanel #contacts ul li.contact .wrap {
     width: 88%;
     margin: 0 auto;
     position: relative;
   }
+  #frame #sidepanel #hidden_contacts ul li.contact .wrap {
+    width: 88%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+
   @media screen and (max-width: 735px) {
     #frame #sidepanel #contacts ul li.contact .wrap {
       width: 100%;
     }
+    #frame #sidepanel #hidden_contacts ul li.contact .wrap {
+      width: 100%;
+    }
+
   }
+
+
   #frame #sidepanel #contacts ul li.contact .wrap span {
     position: absolute;
     left: 0;
@@ -387,37 +479,83 @@ body {
     border: 2px solid #2c3e50;
     background: #95a5a6;
   }
+  #frame #sidepanel #hidden_contacts ul li.contact .wrap span {
+    position: absolute;
+    left: 0;
+    margin: -2px 0 0 -2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #2c3e50;
+    background: #95a5a6;
+  }
+
+
+
   #frame #sidepanel #contacts ul li.contact .wrap span.online {
     background: #2ecc71;
   }
   #frame #sidepanel #contacts ul li.contact .wrap span.away {
     background: #f1c40f;
   }
-  #frame #sidepanel #contacts ul li.contact .wrap span.busy {
+  #frame #sidepanel #contacts  ul li.contact .wrap span.busy {
     background: #e74c3c;
   }
-  #frame #sidepanel #contacts ul li.contact .wrap img {
+
+
+  #frame #sidepanel #contacts  ul li.contact .wrap img {
     width: 40px;
     border-radius: 50%;
     float: left;
     margin-right: 10px;
   }
+  #frame #sidepanel  #hidden_contacts ul li.contact .wrap img {
+    width: 40px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 10px;
+  }
+
+
+
   @media screen and (max-width: 735px) {
     #frame #sidepanel #contacts ul li.contact .wrap img {
       margin-right: 0px;
     }
+    #frame #sidepanel #hidden_contacts ul li.contact .wrap img {
+      margin-right: 0px;
+    }
   }
+
+
+
   #frame #sidepanel #contacts ul li.contact .wrap .meta {
     padding: 5px 0 0 0;
   }
+  #frame #sidepanel #hidden_contacts ul li.contact .wrap .meta {
+    padding: 5px 0 0 0;
+  }
+
+
+
   @media screen and (max-width: 735px) {
     #frame #sidepanel #contacts ul li.contact .wrap .meta {
       display: none;
     }
+    #frame #sidepanel #hidden_contacts ul li.contact .wrap .meta {
+      display: none;
+    }
   }
+
+
   #frame #sidepanel #contacts ul li.contact .wrap .meta .name {
     font-weight: 600;
   }
+  #frame #sidepanel #hidden_contacts ul li.contact .wrap .meta .name {
+    font-weight: 600;
+  }
+
+
   #frame #sidepanel #contacts ul li.contact .wrap .meta .preview {
     margin: 5px 0 0 0;
     padding: 0 0 1px;

@@ -67,7 +67,11 @@
       </div>
       <div id="search">
         <label for=""><i class="fa fa-search" aria-hidden="true"></i></label>
-        <input type="text" placeholder="Search contacts..." />
+        <input type="text" id="searchField" placeholder="Search contacts..."  />
+          <div id="click_cross">
+            <label  ><i class="fa fa-times-circle" aria-hidden="true"></i></label>
+          </div>
+
       </div>
       <div id="contacts">
         <ul>
@@ -83,6 +87,47 @@
           </li>
         </ul>
       </div>
+
+      <!-- hidden contacts for search  -->
+      <div id="hidden_contacts">
+        <ul>
+          <li class="contact">
+            <div class="wrap">
+              <span class="contact-status online"></span>
+              <img src="http://emilcarlsson.se/assets/louislitt.png" alt="" />
+              <div class="meta">
+                <p class="name">Niraj khaiju</p>
+                <p class="preview">Active 5 min ago</p>
+
+              </div>
+            </div>
+          </li>
+          <li class="contact">
+            <div class="wrap">
+              <span class="contact-status online"></span>
+              <img src="http://emilcarlsson.se/assets/louislitt.png" alt="" />
+              <div class="meta">
+                <p class="name">Biran syangbo</p>
+                <p class="preview">Active 5 min ago</p>
+
+              </div>
+            </div>
+          </li>
+          <li class="contact">
+            <div class="wrap">
+              <span class="contact-status online"></span>
+              <img src="http://emilcarlsson.se/assets/louislitt.png" alt="" />
+              <div class="meta">
+                <p class="name">RC</p>
+                <p class="preview">Active 5 min ago</p>
+
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+
       <div id="bottom-bar">
         <button id="addcontact"><i class="fa fa-user-plus fa-fw" aria-hidden="true"></i> <span>Add contact</span></button>
         <button id="settings"><i class="fa fa-cog fa-fw" aria-hidden="true"></i> <span>Settings</span></button>

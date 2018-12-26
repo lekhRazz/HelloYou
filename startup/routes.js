@@ -16,10 +16,10 @@ module.exports = function (app) {
     app.use(session({
         key: '_id',
         secret: 'somerandonstuffs',
-        resave: false,
-        saveUninitialized: false,
+        resave: true,
+        saveUninitialized: true,
         cookie: {
-            expires : new Date(Date.now() + 3600000)
+            maxAge : new Date(Date.now() + 24 * 60 * 60 * 1000)
         }
     }));
     app.use((req, res, next) => {
