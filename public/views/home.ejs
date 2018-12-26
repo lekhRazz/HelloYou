@@ -19,7 +19,9 @@
            </div>
            <div id="feedback"></div>
        </div>
-       <input type="text" id="handle" placeholder="Handle">
+       <input type="text" id="handle" readonly="readonly" placeholder="Handle" value="<%= typeof user !='undefined'? user:'' %>">
+       <!-- <a href="#" id="handle"><%= typeof user !='undefined'? user:'' %></a> -->
+
        <input type="text" id="message" placeholder="message">
        <button id="send" onclick="sendMessage()">Send</button>
    </div>

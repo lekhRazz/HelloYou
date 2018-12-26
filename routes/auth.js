@@ -5,7 +5,9 @@ const sessionChecker=require('../middleware/sessionChecker');
 
 
 router.get('/signin' ,sessionChecker,AuthController.getLoginPage);
-
+router.get('/chatbox', async (req, res) => {
+    res.render('ChatBox');
+});
 router.post('/checksignin',AuthController.checkSignIn);
 
 module.exports=router;

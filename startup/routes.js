@@ -19,7 +19,7 @@ module.exports = function (app) {
         resave: false,
         saveUninitialized: false,
         cookie: {
-            expires: 600000
+            expires : new Date(Date.now() + 3600000)
         }
     }));
     app.use((req, res, next) => {
@@ -29,12 +29,7 @@ module.exports = function (app) {
         next();
     });
 
-    app.use((req, res, next) => {
-        if (req.cookies._id && !req.session.user) {
-            res.clearCookie('_id');        
-        }
-        next();
-    });
+
     
     app.use('', auth);
     app.use('/helloyou/chat',chat);
