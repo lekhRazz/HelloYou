@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const ChatController = require('../controllers/chat.controller');
+const HomeController=require('../controllers/home.controller');
 const sessionChecker = require('../middleware/sessionChecker');
 
-router.get('/', ChatController.getChatRoom);
+router.get('/',HomeController.getHomePage);
 
 router.post('/', async (req, res) => {
 

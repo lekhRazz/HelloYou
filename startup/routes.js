@@ -2,6 +2,9 @@ const express = require('express');
 const auth = require('../routes/auth');
 const users = require('../routes/users');
 const chat=require('../routes/chat');
+const landing=require('../routes/landing-route');
+const profile=require('../routes/profile');
+const home=require('../routes/home');
 const bodyParser=require('body-parser');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
@@ -30,9 +33,11 @@ module.exports = function (app) {
     });
 
 
-    
-    app.use('', auth);
+    app.use('',landing);
+    app.use('/signin', auth);
+    app.use('/helloyou/home',home);
     app.use('/helloyou/chat',chat);
+    app.use('/helloyou/profile',profile);
     app.use('/helloyou/signup', users);
 
 }

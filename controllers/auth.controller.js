@@ -14,10 +14,10 @@ exports.checkSignIn=async(req,res)=>{
     if (error) return res.status(400).send(error.details[0].message);
 
     let user = await User.findOne({ userName: req.body.userName });
-    if (!user) return res.status(400).send('Invalid user name or password.');
+    if (!user) return res.status(400).render('login',{username_err_msg:'Invalid user name..'});
 
     const validPassword = await bcrypt.compare (req.body.password, user.password);
-    if (!validPassword) return res.status(400).send('Invalid email or password.');
+    if (!validPassword) return res.status(400).render('login',{password_err_message:'Invalid  password.'});
 
     req.session.user=user;
     res.redirect('/helloyou/chat');

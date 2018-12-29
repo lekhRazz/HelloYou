@@ -437,6 +437,13 @@ iframe {
   opacity: 1;
 }
 
+.error-message{
+  width: 100%;
+  position: relative;
+  
+  border-radius: 10px;
+}
+
 
 /*------------------------------------------------------------------
 [ Alert validate ]*/

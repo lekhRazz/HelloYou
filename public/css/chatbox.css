@@ -347,13 +347,13 @@ body {
 
 
   #frame #sidepanel #contacts {
-    height: calc(50% - 177px);
+    height: calc(100% - 177px);
     overflow-y: scroll;
     overflow-x: hidden;
   }
   #frame #sidepanel #hidden_contacts {
     display: none;
-    height: calc(50% - 177px);
+    height: calc(100% - 177px);
     overflow-y: scroll;
     overflow-x: hidden;
   }

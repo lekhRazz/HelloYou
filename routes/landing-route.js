@@ -4,8 +4,8 @@ const AuthController=require('../controllers/auth.controller');
 const sessionChecker=require('../middleware/sessionChecker');
 
 
-router.get('/' ,sessionChecker,AuthController.getLoginPage);
-
-router.post('/',AuthController.checkSignIn);
+router.get('/',async(req,res)=>{
+    res.redirect('/signin')
+});
 
 module.exports=router;
