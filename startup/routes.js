@@ -8,7 +8,7 @@ const home=require('../routes/home');
 const bodyParser=require('body-parser');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
-
+const error=require('../middleware/error');
 module.exports = function (app) {
     app.set('view engine', 'ejs');
     app.set('views', './public/views/');
@@ -37,7 +37,7 @@ module.exports = function (app) {
     app.use('/signin', auth);
     app.use('/helloyou/home',home);
     app.use('/helloyou/chat',chat);
-    app.use('/helloyou/profile',profile);
+    app.use('/helloyou',profile);
     app.use('/helloyou/signup', users);
-
+    app.use(error);
 }

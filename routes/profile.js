@@ -3,7 +3,7 @@ const router = express.Router();
 const ProfileController=require('../controllers/profile.controller');
 const sessionChecker = require('../middleware/sessionChecker');
 
-router.get('/',ProfileController.getProfile);
+router.get('/:userName',ProfileController.getProfile);
 
 router.post('/', async (req, res) => {
 
