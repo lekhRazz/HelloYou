@@ -134,7 +134,7 @@ function filterContact() {
 
 $("#click_cross").click(function () {
   console.log("you clicked cross icon");
-  var ul,li;
+  var ul, li;
   var MessageList = document.getElementById("contacts");
   var ContactList = document.getElementById("hidden_contacts");
   $("#searchField").val(null);
@@ -145,8 +145,26 @@ $("#click_cross").click(function () {
   ul = document.getElementById("contact_list");
   li = ul.getElementsByTagName("li");
   for (i = 0; i < li.length; i++) {
-    
-      li[i].style.display = "block";
+
+    li[i].style.display = "block";
+
+  }
+});
+
+
+var btnsubmit = document.getElementById('submitbtn')
+var input = document.getElementById("searchField");
+
+input.addEventListener('keyup', function (event) {
+  message = $("#searchField").val();
+
+  if (event.keyCode === 13) {
+    if ($.trim(message) == '') {
+      return false;
+    } else {
+      // Trigger the button element with a click
+      btnsubmit.click();
+    }
 
   }
 });

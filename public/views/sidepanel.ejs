@@ -1,103 +1,107 @@
 <div id="sidepanel">
-    <div id="profile">
-      <div class="wrap">
-        <img id="profile-img" src="http://emilcarlsson.se/assets/mikeross.png" class="online" alt="" />
-        <p id="handle">
-         <a href="/helloyou/<%= typeof user !='undefined'? user:'' %>"> <%= typeof user !='undefined'? user:'' %></a>
-        </p>
-        <i class="fa fa-chevron-down expand-button" aria-hidden="true"></i>
-        <div id="status-options">
-          <ul>
-            <li id="status-online" class="active"><span class="status-circle"></span>
-              <p>Online</p>
-            </li>
-            <li id="status-away"><span class="status-circle"></span>
-              <p>Away</p>
-            </li>
-            <li id="status-busy"><span class="status-circle"></span>
-              <p>Busy</p>
-            </li>
-            <li id="status-offline"><span class="status-circle"></span>
-              <p>Offline</p>
-            </li>
-          </ul>
-        </div>
-        <div id="expanded">
-          <label for="twitter"><i class="fa fa-phone fa-fw" aria-hidden="true"></i></label>
-          <input name="twitter" type="text" value="<%= typeof phone !='undefined'? phone:'' %>" />
-          <label for="twitter"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i>
-          </label>
-          <input name="twitter" type="text" value="<%= typeof address !='undefined'? address:'' %>" />
-          <label for="twitter"><i class="fa fa-instagram fa-fw" aria-hidden="true"></i></label>
-          <input name="twitter" type="text" value="mike.ross" />
-        </div>
+  <div id="profile">
+    <div class="wrap">
+      <img id="profile-img" src="<%= typeof profile_pic !='undefined'? profile_pic:'' %>" class="online" alt="" />
+      <p id="handle">
+        <a href="/profile/<%= typeof userName !='undefined'? userName:'' %>">
+          <%= typeof userName !='undefined'? userName:'' %></a>
+      </p>
+      <i class="fa fa-chevron-down expand-button" aria-hidden="true"></i>
+      <div id="status-options">
+        <ul>
+          <li id="status-online" class="active"><span class="status-circle"></span>
+            <p>Online</p>
+          </li>
+          <li id="status-away"><span class="status-circle"></span>
+            <p>Away</p>
+          </li>
+          <li id="status-busy"><span class="status-circle"></span>
+            <p>Busy</p>
+          </li>
+          <li id="status-offline"><span class="status-circle"></span>
+            <p>Offline</p>
+          </li>
+        </ul>
+      </div>
+      <div id="expanded">
+        <label for="twitter"><i class="fa fa-phone fa-fw" aria-hidden="true"></i></label>
+        <input name="twitter" type="text" value="<%= typeof phone !='undefined'? phone:'' %>" />
+        <label for="twitter"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i>
+        </label>
+        <input name="twitter" type="text" value="<%= typeof address !='undefined'? address:'' %>" />
+        <label for="twitter"><i class="fa fa-instagram fa-fw" aria-hidden="true"></i></label>
+        <input name="twitter" type="text" value="mike.ross" />
       </div>
     </div>
-    <div id="search">
+  </div>
+  <div id="search">
+    <form method="post" action="/searchlist">
       <label for=""><i class="fa fa-search" aria-hidden="true"></i></label>
-      <input type="text" id="searchField" placeholder="Search contacts..." />
+      <input type="text" name="searchName" id="searchField" placeholder="Search contacts..." />
       <div id="click_cross">
         <label><i class="fa fa-times-circle" aria-hidden="true"></i></label>
       </div>
+      <input id="submitbtn" type="submit" style="display:none"/>
 
-    </div>
-    <div id="contacts">
-      <ul>
-        <li class="contact">
-          <div class="wrap">
-            <span class="contact-status online"></span>
-            <img src="http://emilcarlsson.se/assets/louislitt.png" alt="" />
-            <div class="meta">
-              <p class="name">Louis Litt</p>
-              <p class="preview">You just got LITT up, Mike.</p>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <!-- hidden contacts for search  -->
-    <div id="hidden_contacts">
-      <ul id="contact_list">
-        <li class="contact">
-          <div class="wrap">
-            <span class="contact-status online"></span>
-            <img src="http://emilcarlsson.se/assets/louislitt.png" alt="" />
-            <div class="meta">
-              <p class="name">Niraj khaiju</p>
-              <p class="preview">Active 5 min ago</p>
-
-            </div>
-          </div>
-        </li>
-        <li class="contact">
-          <div class="wrap">
-            <span class="contact-status online"></span>
-            <img src="http://emilcarlsson.se/assets/louislitt.png" alt="" />
-            <div class="meta">
-              <p class="name">Biran syangbo</p>
-              <p class="preview">Active 5 min ago</p>
-
-            </div>
-          </div>
-        </li>
-        <li class="contact">
-          <div class="wrap">
-            <span class="contact-status online"></span>
-            <img src="http://emilcarlsson.se/assets/louislitt.png" alt="" />
-            <div class="meta">
-              <p class="name">RC</p>
-              <p class="preview">Active 5 min ago</p>
-
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-
-    <div id="bottom-bar">
-      <button id="addcontact"><i class="fa fa-user-plus fa-fw" aria-hidden="true"></i> <span>Add contact</span></button>
-      <button id="settings"><i class="fa fa-cog fa-fw" aria-hidden="true"></i> <span>Settings</span></button>
-    </div>
+    </form>
   </div>
+  <div id="contacts">
+    <ul>
+      <li class="contact">
+        <div class="wrap">
+          <span class="contact-status online"></span>
+          <img src="http://emilcarlsson.se/assets/louislitt.png" alt="" />
+          <div class="meta">
+            <p class="name">Louis Litt</p>
+            <p class="preview">You just got LITT up, Mike.</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- hidden contacts for search  -->
+  <div id="hidden_contacts">
+    <ul id="contact_list">
+      <li class="contact">
+        <div class="wrap">
+          <span class="contact-status online"></span>
+          <img src="http://emilcarlsson.se/assets/louislitt.png" alt="" />
+          <div class="meta">
+            <p class="name">Niraj khaiju</p>
+            <p class="preview">Active 5 min ago</p>
+
+          </div>
+        </div>
+      </li>
+      <li class="contact">
+        <div class="wrap">
+          <span class="contact-status online"></span>
+          <img src="http://emilcarlsson.se/assets/louislitt.png" alt="" />
+          <div class="meta">
+            <p class="name">Biran syangbo</p>
+            <p class="preview">Active 5 min ago</p>
+
+          </div>
+        </div>
+      </li>
+      <li class="contact">
+        <div class="wrap">
+          <span class="contact-status online"></span>
+          <img src="http://emilcarlsson.se/assets/louislitt.png" alt="" />
+          <div class="meta">
+            <p class="name">RC</p>
+            <p class="preview">Active 5 min ago</p>
+
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+  <div id="bottom-bar">
+    <button id="addcontact"><i class="fa fa-user-plus fa-fw" aria-hidden="true"></i> <span>Add contact</span></button>
+    <button id="settings"><i class="fa fa-cog fa-fw" aria-hidden="true"></i> <span>Settings</span></button>
+  </div>
+</div>

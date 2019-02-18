@@ -8,7 +8,11 @@ const home=require('../routes/home');
 const bodyParser=require('body-parser');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
+var searchlist=require('../routes/searchlist');
 const error=require('../middleware/error');
+
+
+
 module.exports = function (app) {
     app.set('view engine', 'ejs');
     app.set('views', './public/views/');
@@ -19,8 +23,8 @@ module.exports = function (app) {
     app.use(session({
         key: '_id',
         secret: 'somerandonstuffs',
-        resave: true,
-        saveUninitialized: true,
+        resave: false,
+        saveUninitialized: false,
         cookie: {
             maxAge : new Date(Date.now() + 24 * 60 * 60 * 1000)
         }
@@ -37,7 +41,8 @@ module.exports = function (app) {
     app.use('/signin', auth);
     app.use('/helloyou/home',home);
     app.use('/helloyou/chat',chat);
-    app.use('/helloyou',profile);
-    app.use('/helloyou/signup', users);
+    app.use('/profile',profile);
+    app.use('/signup', users);
+    app.use('/searchlist',searchlist);
     app.use(error);
 }

@@ -4,7 +4,8 @@ var session = require('express-session');
 const { User, validate } = require('../models/users');
 
 
-exports.getSignupForm = async (req, res) => {
+module.exports.getSignupForm = async (req, res) => {
+    console.log("you hit the signup form ");
     res.render('signup');
 }
 
